@@ -7,7 +7,20 @@
 }
 
 body {
-    background: #ffd6d6;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b 0%,
+    #fff2cc 20%,
+    #1e1412 45%,
+    #b06192 75%,
+    #b858a5 100%
+  );
+}
+
+.hero,
+.gallery-section {
+  background: transparent;
 }
 
 /* ================= NAVBAR ================= */
@@ -90,7 +103,7 @@ nav {
 .hero {
     display: flex;
     min-height: 100vh;
-    background: linear-gradient(to right, #fff2cc, #ffd6d6);
+    background: linear-gradient(80deg, #fff3b1 0%, #ffd4e5 50%, #e6b3ff 100%);
 }
 
 .hero-text {
@@ -137,9 +150,9 @@ nav {
 
 /* ================= GALLERY SECTION ================= */
 .gallery-section {
-
+    background: linear-gradient(135deg, #fff3b1 0%, #ffd4e5 50%, #e6b3ff 100%);
     padding: 100px;
-    background: linear-gradient(to right, #fff2cc, #ffd6d6);
+   
 }
 
 /* MAIN LAYOUT */
