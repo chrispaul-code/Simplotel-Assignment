@@ -1,0 +1,252 @@
+/* ================= GLOBAL ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #ffd6d6;
+}
+
+/* ================= NAVBAR ================= */
+/* Navigation */
+nav {
+    background: linear-gradient(to right, #ff6b6b, #ee5a6f);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    flex: 1;
+}
+
+.nav-links li {
+    flex: 1;
+}
+
+.nav-links a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    font-weight: 800;
+    font-family:sans-serif;
+    font-size: 60px;
+    letter-spacing: 3px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 1rem;
+}
+
+#meanu-img{
+    width: 30px;
+    height: 30px;
+}
+
+#meanu-img-nav{
+    /* align-items: center; */
+    justify-self: start;
+    margin-top: 8px;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #000;
+    transition: all 0.3s;
+}
+
+/* ================= HERO ================= */
+.hero {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(to right, #fff2cc, #ffd6d6);
+}
+
+.hero-text {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-text h1 {
+    font-size: 68px;
+    letter-spacing: 3px;
+    
+    margin-bottom: 40px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin: 30px 0;
+    line-height: 1.6;
+    max-width: 620px;
+}
+
+.hero-text button {
+    margin-top: 20px;
+    width: 180px;
+    padding: 18px;
+    background: #ff6b6b;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= GALLERY SECTION ================= */
+.gallery-section {
+
+    padding: 100px;
+    background: linear-gradient(to right, #fff2cc, #ffd6d6);
+}
+
+/* MAIN LAYOUT */
+.image-layout {
+    display: grid;
+    grid-template-columns: 260px 360px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* LEFT COLUMN – SQUARE IMAGES */
+.left-images {
+    display: grid;
+    grid-template-rows: repeat(2, 260px);
+    gap: 20px;
+}
+
+.left-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* MIDDLE COLUMN – TALL IMAGE */
+.middle-image {
+    height: 540px;
+}
+
+.middle-image img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* RIGHT INFO CARD */
+.info-card {
+    background: #ff6b6b;
+    padding: 40px;
+    max-width: 500px;
+}
+
+.info-card span {
+    font-size: 16px;
+    /* letter-spacing: 2px; */
+}
+
+.info-card h1 {
+    margin: 20px 0;
+    /* padding: 10px; */
+    font-size: 42px;
+    font-weight: 790;
+    letter-spacing: 6px;
+    
+}
+
+.info-card a {
+    text-decoration: none;
+    color: black;
+    font-weight: 100;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .image-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .left-images {
+        grid-template-rows: auto;
+    }
+
+    .middle-image {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to right, #ff6b6b, #ee5a6f);
+        flex-direction: column;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}   

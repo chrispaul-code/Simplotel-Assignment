@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Website</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#restaurant">Restaurant</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+
+            </ul>
+            <div  class="menu-toggle" onclick="toggleMenu()">
+                <img id="meanu-img" src="./images/menu-bar.png" alt="Menu">
+            </div>
+        </div>
+    </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>LOREM IPSUM</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id est vitae dolor rhoncus tristique. Maecenas metus quam, rhoncus euismod lorem in, sollicitudin viverra eros. Donec dictum luctus quam ut tristique. Curabitur nec faucibus purus. Quisque congue sem nec justo mollis, in tincidunt erat pretium. Sed pulvinar, massa ac porta viverra.
+      </p>
+      <button>Click Me</button>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/hero.jpg" alt="Food Image">
+    </div>
+  </section>
+
+<section class="gallery-section">
+  <div class="image-layout">
+
+    <div class="left-images">
+      <img src="images/food1.jpg" alt="Food">
+      <img src="images/restaurant.jpg" alt="Restaurant">
+    </div>
+
+    <div class="middle-image">
+      <img src="images/food2.jpg" alt="Food">
+    </div>
+
+    <div class="info-card">
+      <span>LOREM IPSUM</span>
+      <h1>LOREM IPSUM<br>SET ADEMIR</h1>
+      <a href="#">Click →</a>
+    </div>
+
+  </div>
+</section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    </script>
+
+
+</body>
+</html>
